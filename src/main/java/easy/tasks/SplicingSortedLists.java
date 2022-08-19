@@ -4,7 +4,7 @@ import easy.models.ListNode;
 
 public class SplicingSortedLists {
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        //we need created pointer which we use to get head of the list node
+        //we need create pointer which we use to get head of the list node
         ListNode head = new ListNode();
         //in this node we will accumulate nodes with lesser value
         ListNode tail = head;
@@ -12,6 +12,7 @@ public class SplicingSortedLists {
         while (list1 != null || list2 != null) {
 
             if (list2 == null || (list1 != null && list1.val < list2.val)) {
+                //this only for the first iteration, to tie the first node to the head
                 tail.next = list1;
                 tail = list1;
                 list1 = list1.next;
