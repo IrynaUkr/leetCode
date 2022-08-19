@@ -1,6 +1,5 @@
-package easy.task01_twosum;
+package easy.tasks;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum {

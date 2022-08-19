@@ -1,7 +1,6 @@
-package medium.tas01_twosum;
+package medium.tasks;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class LettersCombinationPhone {

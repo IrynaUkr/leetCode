@@ -1,4 +1,4 @@
-package easy.task01_twosum;
+package easy.tasks;
 
 public class LogestPrefix {
     public static String longestCommonPrefix(String[] strs) {

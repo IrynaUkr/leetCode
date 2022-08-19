@@ -1,4 +1,4 @@
-package easy.task01_twosum;
+package easy.tasks;
 
 import java.util.Stack;
 

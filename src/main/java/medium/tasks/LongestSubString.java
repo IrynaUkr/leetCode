@@ -1,4 +1,4 @@
-package medium.tas01_twosum;
+package medium.tasks;
 
 import java.util.*;
 
