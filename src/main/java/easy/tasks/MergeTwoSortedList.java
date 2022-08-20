@@ -4,7 +4,7 @@ import easy.models.ListNode;
 
 public class MergeTwoSortedList {
 
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode head = new ListNode();
         ListNode tail = head;
        //create pointer to save nodes without changes
@@ -30,5 +30,24 @@ public class MergeTwoSortedList {
             tail.next = pointer2;
         }
         return head.next;
+    }
+    public static void main(String[] args) {
+        ListNode white1 = new ListNode(1);
+        ListNode white2 = new ListNode(2);
+        ListNode white3 = new ListNode(5);
+        white1.next = white2;
+        white2.next = white3;
+        ListNode red1 = new ListNode(6);
+        ListNode red2 = new ListNode(10);
+        ListNode red3 = new ListNode(11);
+        red1.next = red2;
+        red2.next = red3;
+
+
+        ListNode merged = mergeTwoLists(white1, red1);
+        while (merged != null) {
+            System.out.println(merged.val);
+            merged = merged.next;
+        }
     }
 }
