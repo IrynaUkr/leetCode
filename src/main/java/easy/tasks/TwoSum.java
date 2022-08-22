@@ -26,14 +26,14 @@ public class TwoSum {
                 result[1] = i;
             }
             else{
-                map.put(neededValue, i);
+                map.put(nums[i], i);
             }
         }
         return result;
     }
 
     public static void main(String[] args) {
-        int[] ints = twoSum(new int[]{10, 20, 30, 1, 2, 6}, 3);
+        int[] ints = twoSumHash(new int[]{10, 20, 30, 1, 2, 6}, 3);
         System.out.println(ints[0]+" "+ ints[1]);
 
     }
