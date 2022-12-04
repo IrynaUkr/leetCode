@@ -3,6 +3,7 @@ package easy.tasks;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BullsAndCows {
     public static String getHint(String secret, String guess) {
@@ -56,4 +57,5 @@ public class BullsAndCows {
         String hint = getHint("11", "01");
         System.out.println(hint);
     }
+
 }
