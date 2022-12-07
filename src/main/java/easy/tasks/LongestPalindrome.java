@@ -36,8 +36,10 @@ public class LongestPalindrome {
         }
     }
 
+
     public static void main(String[] args) {
         int aabaa = longestPal("aabaabq");
         System.out.println(aabaa);
     }
+
 }
