@@ -1,7 +1,7 @@
 package easy.tasks;
 
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Fibonacci {
     //0 1 1 2 3 5 8 13
