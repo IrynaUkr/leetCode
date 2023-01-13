@@ -1,4 +1,4 @@
-package easy.tasks;
+package assesment.techreturners;
 
 import java.io.*;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package easy.tasks;
+package assesment.waile.adge;
 
 public class Walie {
      public static int amountDivisible(int start, int end, int divisor){

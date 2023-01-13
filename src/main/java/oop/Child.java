@@ -14,7 +14,10 @@ public class Child extends Parent{
     public static void main(String[] args) {
         Child kitten = new Child();
         String nameAlias = kitten.createNameAlias();
-       
+       if(kitten instanceof Child){
+           kitten.surname="cat";
+       }
+
     }
 
 }
