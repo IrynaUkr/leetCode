@@ -24,13 +24,18 @@ public class PascalTriangle {
         }
         return result;
     }
+    public static List<Integer> getRow(int rowIndex) {
+        List<List<Integer>> fullList = generate(rowIndex+1);
+        return fullList.get(rowIndex);
+    }
 
     public static void main(String[] args) {
-        List<List<Integer>> res = generate(0);
-        for (int i = 0; i < res.size(); i++) {
-            List<Integer> integers = res.get(i);
-            System.out.println(integers);
-        }
+//        List<List<Integer>> res = generate(0);
+//        for (int i = 0; i < res.size(); i++) {
+//            List<Integer> integers = res.get(i);
+//            System.out.println(integers);
+//        }
+        System.out.println(getRow(3));
     }
 
 }
