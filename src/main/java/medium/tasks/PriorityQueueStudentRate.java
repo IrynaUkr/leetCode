@@ -1,13 +1,85 @@
 package medium.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
+
+class Student implements Comparable{
+    int id;
+    double cgpa;
+    String name;
+
+    public Student(){};
+
+    public Student(String name, double cgpa, int id){
+        this.name = name;
+        this.id = id;
+        this.cgpa = cgpa;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getID(){
+        return this.id;
+    }
+    public void setCgpa(double cgpa){
+        this.cgpa = cgpa;
+    }
+    public double getCGPA(){
+        return this.cgpa;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return this.name;
+    }
+
+    @Override
+    public int compareTo(Object o){
+        Student s = (Student) o;
+        if(this.getCGPA()==s.getCGPA()){
+            if(this.getName().equals(s.getName())){
+                return this.getID() - s.getID();
+            }
+            else{
+                return this.getName().compareTo(s.getName());
+            }
+        }
+        else{
+            return this.getCGPA()<s.getCGPA()?1:-1;
+        }
+    }
+}
+
+class Priorities{
+
+    public List<Student> getStudents(List<String> events){
+        Queue<Student> q = new PriorityQueue<>();
+        List<Student> studensInQueue = new ArrayList<>();
+        for(String event:events){
+            if(event.contains("ENTER")){
+                String[] s = event.split(" ");
+                Student newStudent = new Student(s[1], Double.parseDouble(s[2]), Integer.parseInt(s[3]));
+                q.add(newStudent);
+            }
+            else{
+                if(!q.isEmpty())
+                    q.remove();
+            }
+        }
+        while(!q.isEmpty()){
+            Student student = q.peek();
+            studensInQueue.add(student);
+            q.remove();
+        }
+        return studensInQueue;
+    }
+}
+
 
 public class PriorityQueueStudentRate {
     private final static Scanner scan = new Scanner(System.in);
-    private final static Student.Priorities priorities = new Student.Priorities();
+    private final static Priorities priorities = new Priorities();
 
     public static void main(String[] args) {
         int totalEvents = Integer.parseInt(scan.nextLine());
@@ -26,63 +98,6 @@ public class PriorityQueueStudentRate {
             for (Student st: students) {
                 System.out.println(st.getName());
             }
-        }
-    }
-}
-
-class Student implements Comparable<Student> {
-    private final int id;
-    private final String name;
-    private final double cdpa;
-
-    public Student(int id, String name, double cdpa) {
-        this.id = id;
-        this.name = name;
-        this.cdpa = cdpa;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getCdpa() {
-        return cdpa;
-    }
-
-    @Override
-    public int compareTo(Student s) {
-        if (this.getCdpa() == s.getCdpa()) {
-            if (this.getName().equals(s.getName())) {
-                return this.getId() - s.getId();
-            } else {
-                return this.getName().compareTo(s.getName());
-            }
-        } else {
-            return this.getCdpa() < s.getCdpa() ? 1 : -1;
-        }
-    }
-
-
-
-    static class Priorities {
-        List<Student> getStudents(List<String> events) {
-            PriorityQueue<Student> queue = new PriorityQueue<>();
-            for (int i = 0; i < events.size(); i++) {
-                String[] info = events.get(i).split(" ");
-                if (info[0].equals("ENTER")) {
-                    int id = Integer.parseInt(info[3]);
-                    String name = info[1];
-                    double cdpa = Double.parseDouble(info[2]);
-                    queue.add(new Student(id, name, cdpa));
-                } else {
-                    queue.poll();
-                }
-            }
-            return new ArrayList<>(queue);
         }
     }
 }
