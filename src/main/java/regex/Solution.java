@@ -9,6 +9,7 @@ public class Solution {
         String triplets = "^((.){3}\\.){3}(.){3}$";
         Pattern pattern =Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input);
+
         return matcher.matches();
     }
 

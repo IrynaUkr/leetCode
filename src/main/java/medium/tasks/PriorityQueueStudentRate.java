@@ -91,6 +91,8 @@ public class PriorityQueueStudentRate {
         }
 
         List<Student> students = priorities.getStudents(events);
+        Set<Integer> num = new HashSet<>();
+
 
         if (students.isEmpty()) {
             System.out.println("EMPTY");
