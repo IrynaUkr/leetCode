@@ -1,2 +1,5 @@
-package prep;public class Solution {
+package prep;
+
+public class Solution {
+
 }
